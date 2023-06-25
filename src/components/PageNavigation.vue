@@ -9,7 +9,11 @@
       <img class="navigationButtonImg" src="../assets/icons/twitter.png" alt="" />
       <p>Twitter</p>
     </a>
-    <a class="navigationButton" href="https://ggmax.com.br/anuncio/sh1ro-elojobs-league-of-legends" target="_blank">
+    <a
+      class="navigationButton"
+      href="https://ggmax.com.br/anuncio/sh1ro-elojobs-league-of-legends"
+      target="_blank"
+    >
       <img class="navigationButtonImg" src="../assets/icons/riven.png" alt="" />
       <p>Sh1roJobs</p>
     </a>
@@ -33,7 +37,7 @@
   align-items: center;
   gap: 8px;
   border: 1px solid var(--colorTheme);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--invisible);
   border-radius: 15px;
   text-shadow: 0px 0px 5px var(--colorTheme), 0px 0px 5px var(--colorTheme),
     0px 0px 5px var(--colorTheme), 0px 0px 5px var(--colorTheme);

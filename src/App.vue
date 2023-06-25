@@ -10,9 +10,10 @@ import { RouterView } from 'vue-router'
 :root {
   --colorTheme: rgb(190, 50, 70);
   --previousColor-Shadow: rgb(0, 0, 0);
-  --dangerEasy: rgb(80, 220, 127);
-  --dangerMedium: rgb(220, 199, 80);
-  --dangerHard: rgb(220, 80, 80);
+  --dangerEasy: rgb(57, 255, 20);
+  --dangerMedium: rgb(255, 255, 0);
+  --dangerHard: rgb(160, 32, 240);
+  --invisible: rgba(0, 0, 0, 0);
 }
 
 * {
@@ -27,7 +28,7 @@ body {
   font-weight: normal;
   font-size: 16px;
   margin-block: 5vh;
-  background-color: rgb(15, 15, 15);
+  background-color: black;
 }
 
 #app {
