@@ -18,14 +18,16 @@ import { RouterView } from 'vue-router'
 * {
   list-style-type: none;
   color: inherit;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   text-decoration: inherit;
 }
 
 body {
   font-weight: normal;
   font-size: 16px;
+  margin-block: 5vh;
+  background-color: rgb(15, 15, 15);
 }
 
 #app {
@@ -34,5 +36,6 @@ body {
   min-height: 100vh;
   max-width: 100vw;
   padding-inline: 4vw;
+  row-gap: 5vh;
 }
 </style>

@@ -8,40 +8,66 @@ export default {
   },
   data() {
     return {
+      tips: [
+        {
+          name: 'Longo Alcance',
+          playstyle: 'Tente levar a menor quantidade de dano possível até o level 6',
+          expanded: false
+        },
+        {
+          name: 'Corpo a corpo',
+          playstyle: 'Tente fazer short trades até um ponto onde possa dar all in',
+          expanded: false
+        },
+        {
+          name: 'Estilo de Jogo',
+          playstyle: 'Utilize de forma inteligente os seus stuns',
+          expanded: false
+        },
+        {
+          name: 'Plano de Jogo',
+          playstyle: 'Não morra',
+          expanded: false
+        }
+      ],
       matchs: [
         {
           image: 'http://ddragon.leagueoflegends.com/cdn/img/champion/centered/Aatrox_0.jpg',
           name: 'Aatrox',
           previousText:
-            'É uma matchup relativamente simples, onde o seu objetivo principal é baitar o E+Q dele, utilizando um Q para se aproximar ao mesmo tempo em que evita levar dano crítico do Q.',
+            'É uma matchup relativamente simples, onde o seu objetivo principal é baitar o E+Q dele fazendo com que se exponha. Para isso, use o Q na direção do Aatrox quando for desviar do Q1 ou Q2 dele',
           expanded: false,
           danger: 'Fácil'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Akshan_0.jpg',
           name: 'Akshan',
-          previousText: 'Prévia da Matchup',
+          previousText:
+            'É uma matchup ligeiramente dificil, o mais seguro é evitar ao máximo levar dano até o level 6 e só então jogar agressivamente, já que Riven leva vantagem a partir desse level contra a maior parte dos rangeds. Ao dar all in, mantenha-se próximo para bloquear a corda do Akshan.',
           expanded: false,
           danger: 'Difícil'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Camille_0.jpg',
           name: 'Camille',
-          previousText: 'Prévia da Matchup',
+          previousText:
+            'Varia de acordo com o patch, mas a riven sempre vai ter um early igual ou superior ao da Camille. Tente baitar o escudo dela se aproximando e quando for levar o AA use seu E. Você leva vantagem tanto em trocas longas quanto curtas nessa fase do jogo, então não tenha medo',
           expanded: false,
           danger: 'Médio'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Chogath_0.jpg',
           name: 'Cho Gath',
-          previousText: 'Prévia da Matchup',
+          previousText:
+            'Matchup um tanto desagradável, tente abusar ao máximo dos primeiros leveis, causando o máximo de dano e recebendo o minimo pois essa vida será importante tanto para evitar ganks quanto pressiona-lo ao longo do tempo.',
           expanded: false,
           danger: 'Médio'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Darius_0.jpg',
           name: 'Darius',
-          previousText: 'Prévia da Matchup',
+          previousText:
+            'Nessa matchup é muito importante usar seus stuns de forma consciente, cancelando os auto ataques do Darius para evitar sua passiva. Trocas curtas são importantes para deixa-lo com 70% de vida, e então dar um all in, mas tenha cuidado com o flash adversário',
           expanded: false,
           danger: 'Fácil'
         },
@@ -256,6 +282,13 @@ export default {
           danger: 'Difícil'
         },
         {
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Vayne_0.jpg',
+          name: 'Vayne',
+          previousText: 'Prévia da Matchup',
+          expanded: false,
+          danger: 'Difícil'
+        },
+        {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Vladimir_0.jpg',
           name: 'Vladimir',
           previousText: 'Prévia da Matchup',
@@ -296,8 +329,9 @@ export default {
     }
   },
   methods: {
-    expandCard(match) {
-      match.expanded = !match.expanded
+    expandCard(card) {
+      card.expanded = !card.expanded
+      console.log(card)
     },
     getDangerColor(match) {
       if (match.danger === 'Fácil') {
@@ -319,37 +353,56 @@ export default {
   <PageNavigation />
   <PageHeader />
   <main id="main">
-    <div
-      class="matchCard"
-      :class="{ expanded: match.expanded }"
-      v-for="match in matchs"
-      :key="match.name"
-      :style="{ backgroundImage: 'url(' + match.image + ')' }"
-      @click="expandCard(match)"
-    >
-      <h1 class="cardName">
-        {{ match.name }}
-        <h2 class="cardDanger" :style="{ color: getDangerColor(match) }">
-          {{ match.danger }}
-        </h2>
-      </h1>
-      <p class="cardPrevious" v-show="match.expanded">
-        {{ match.previousText }}
-      </p>
+    <div id="matchContainer">
+      <h1 id="containerTitle">Todas as Matchups</h1>
+      <div
+        class="matchCard"
+        :class="{ expanded: match.expanded }"
+        v-for="match in matchs"
+        :key="match.name"
+        :style="{ backgroundImage: 'url(' + match.image + ')' }"
+        @click="expandCard(match)"
+      >
+        <h1 class="cardName">
+          {{ match.name }}
+          <h2 class="cardDanger" :style="{ color: getDangerColor(match) }">
+            {{ match.danger }}
+          </h2>
+        </h1>
+        <p class="cardPrevious" v-show="match.expanded">
+          {{ match.previousText }}
+        </p>
+      </div>
     </div>
   </main>
 </template>
 
 <style scoped>
 #main {
-  margin-block: 5vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+}
+
+#containerTitle {
+  display: flex;
+  justify-content: center;
+  grid-column: 1/5;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-block: 1vh;
+}
+
+#matchContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black,
     0px 0px 5px black, 0px 0px 5px black;
+  border-radius: 20px;
 }
-
 .matchCard {
   display: flex;
   flex-direction: column;
@@ -361,6 +414,7 @@ export default {
   padding: 10px;
   border-radius: 20px;
   box-shadow: 3px 2px 5px 0px black;
+  color: white;
   overflow: hidden;
 
   transition: height 0.5s ease-in;
@@ -375,7 +429,6 @@ export default {
 
 .cardName {
   font-size: 2rem;
-  color: white;
   text-align: center;
 }
 

@@ -9,7 +9,7 @@
       <img class="navigationButtonImg" src="../assets/icons/twitter.png" alt="" />
       <p>Twitter</p>
     </a>
-    <a class="navigationButton" href="#">
+    <a class="navigationButton" href="https://ggmax.com.br/anuncio/sh1ro-elojobs-league-of-legends" target="_blank">
       <img class="navigationButtonImg" src="../assets/icons/riven.png" alt="" />
       <p>Sh1roJobs</p>
     </a>
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  margin: 5vh 22vw;
+  margin-inline: 22vw;
   color: white;
   gap: 2vw;
 }
