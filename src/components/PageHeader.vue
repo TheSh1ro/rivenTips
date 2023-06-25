@@ -24,9 +24,9 @@
   background-size: cover;
 
   border-radius: 20px;
-  border: 1px solid var(--colorTheme);
-  text-shadow: 0px 0px 5px var(--colorTheme), 0px 0px 5px var(--colorTheme), 0px 0px 5px var(--colorTheme), 0px 0px 5px var(--colorTheme),
-    0px 0px 5px var(--colorTheme), 0px 0px 5px var(--colorTheme);
+  border: 1px solid var(--colorHeader);
+  text-shadow: 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader),
+    0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader);
   color: white;
 }
 .welcome {

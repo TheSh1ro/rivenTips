@@ -1,4 +1,18 @@
-<script setup></script>
+<script>
+export default {
+  data() {
+    return {
+      linkTo: 'desenvolvimento'
+    }
+  },
+  methods: {
+    toggleLinkTo() {
+      this.linkTo = this.linkTo === 'desenvolvimento' ? 'início' : 'desenvolvimento'
+    }
+  }
+}
+</script>
+
 <template>
   <navigation id="navigation">
     <a class="navigationButton" href="https://discord.gg/MpWnCWw54s" target="_blank">
@@ -17,8 +31,17 @@
       <img class="navigationButtonImg" src="../assets/icons/riven.png" alt="" />
       <p>Sh1roJobs</p>
     </a>
+    <RouterLink @click="toggleLinkTo" :to="linkTo" class="navigationButton">
+      <img
+        class="navigationButtonImg"
+        alt=""
+        src="https://www.adobe.com/br/express/create/media_114db2401080d263d7338e6fab6589ca67f85274c.jpeg?width=400&format=jpeg&optimize=medium"
+      />
+      <p>TestRoute</p>
+    </RouterLink>
   </navigation>
 </template>
+
 <style scoped>
 #navigation {
   display: flex;

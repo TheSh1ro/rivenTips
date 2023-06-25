@@ -1,19 +1,24 @@
-<script>
+<script setup>
 import { RouterView } from 'vue-router'
+import PageNavigation from './components/PageNavigation.vue'
 </script>
 
 <template>
+  <PageNavigation />
   <RouterView />
 </template>
 
 <style>
 :root {
+  /* Default */
+  --colorHeader: rgb(190, 50, 70);
   --colorTheme: rgb(190, 50, 70);
-  --previousColor-Shadow: rgb(0, 0, 0);
+  --invisible: rgba(0, 0, 0, 0);
+
+  /* Cores conforme dificuldade */
   --dangerEasy: rgb(57, 255, 20);
   --dangerMedium: rgb(255, 255, 0);
   --dangerHard: rgb(160, 32, 240);
-  --invisible: rgba(0, 0, 0, 0);
 }
 
 * {

@@ -1,12 +1,10 @@
 <script>
 import PageHeader from '../components/PageHeader.vue'
-import PageNavigation from '../components/PageNavigation.vue'
 import MatchupComponent from '../components/MatchupComponent.vue'
 import TipsComponent from '../components/TipsComponent.vue'
 export default {
   components: {
     PageHeader,
-    PageNavigation,
     MatchupComponent,
     TipsComponent
   },
@@ -40,7 +38,6 @@ export default {
 </script>
 
 <template>
-  <PageNavigation />
   <PageHeader />
   <main id="main">
     <h1 class="containerTitle">↓ Show Matchups ↓</h1>

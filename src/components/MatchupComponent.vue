@@ -340,6 +340,7 @@ export default {
   </div>
 </template>
 <style scoped>
+/* Seletores ID */
 #matchContainer {
   display: grid;
   justify-items: center;
@@ -350,6 +351,15 @@ export default {
     0px 0px 15px black, 0px 0px 15px black;
   border-radius: 20px;
 }
+
+#cardPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Seletores de classe */
 .matchCard {
   display: flex;
   flex-direction: column;
@@ -370,23 +380,18 @@ export default {
   height: 140px;
   width: 290px;
 }
-#cardPreview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 .cardName {
   font-size: 2rem;
   text-align: center;
 }
+
 .cardDanger {
   font-size: 1.4rem;
 }
 
 .cardAbout {
   font-size: 1rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,33 +409,38 @@ export default {
   box-shadow: 3px 2px 5px 0px var(--dangerEasy);
   border: 1px solid var(--dangerEasy);
 }
+
 .dangerMedium:hover {
   box-shadow: 3px 2px 5px 0px var(--dangerMedium);
   border: 1px solid var(--dangerMedium);
 }
+
 .dangerHard:hover {
   box-shadow: 3px 2px 5px 0px var(--dangerHard);
   border: 1px solid var(--dangerHard);
 }
 
 .dangerEasy.expanded,
-.dangerEasy.viewCard {
+.dangerEasy.fullExpanded {
   box-shadow: 3px 2px 5px 0px var(--dangerEasy);
   border: 1px solid var(--dangerEasy);
 }
+
 .dangerMedium.expanded,
-.dangerMedium.viewCard {
+.dangerMedium.fullExpanded {
   box-shadow: 3px 2px 5px 0px var(--dangerMedium);
   border: 1px solid var(--dangerMedium);
 }
+
 .dangerHard.expanded,
-.dangerHard.viewCard {
+.dangerHard.fullExpanded {
   box-shadow: 3px 2px 5px 0px var(--dangerHard);
   border: 1px solid var(--dangerHard);
 }
+
 .matchCard.expanded {
   grid-row: span 3;
-  height: calc(140px * 3 + 40px);
+  height: calc(140px * 3 + 20px * 2);
 }
 
 .matchCard.fullExpanded {
@@ -439,5 +449,10 @@ export default {
   width: 100%;
   box-shadow: 3px 2px 5px 0px var(--colorTheme);
   border: 1px solid var(--colorTheme);
+}
+
+/* Outros seletores */
+.cardPreview {
+  background-color: black;
 }
 </style>
