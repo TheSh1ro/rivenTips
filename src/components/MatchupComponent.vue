@@ -325,7 +325,7 @@ export default {
       @click="expandCard(match, index)"
       @mouseleave="closeCard(match)"
     >
-      <div id="cardPreview">
+      <div class="cardPreview">
         <p class="cardName">
           {{ match.name }}
         </p>
@@ -351,14 +351,6 @@ export default {
   border-radius: 20px;
 }
 
-#cardPreview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Seletores de classe */
 .matchCard {
   display: flex;
   flex-direction: column;
@@ -377,6 +369,13 @@ export default {
   position: relative;
   transition: 0.5s ease;
   height: 140px;
+}
+
+.cardPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cardName {
