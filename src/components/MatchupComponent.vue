@@ -387,6 +387,10 @@ export default {
   font-size: 1.4rem;
 }
 
+.matchCard.expanded {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
 .cardExpand {
   display: flex;
   justify-content: center;
@@ -396,8 +400,6 @@ export default {
   overflow: hidden;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
-  flex: 1;
-  width: 100%;
   border-radius: 20px;
   padding: 10px;
 }
