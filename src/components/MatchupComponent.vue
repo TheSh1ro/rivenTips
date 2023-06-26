@@ -450,9 +450,4 @@ export default {
   box-shadow: 3px 2px 5px 0px var(--colorTheme);
   border: 1px solid var(--colorTheme);
 }
-
-/* Outros seletores */
-.cardPreview {
-  background-color: black;
-}
 </style>
