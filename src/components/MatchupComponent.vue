@@ -343,7 +343,6 @@ export default {
 /* Seletores ID */
 #matchContainer {
   display: grid;
-  justify-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 20px;
@@ -378,7 +377,6 @@ export default {
   position: relative;
   transition: 0.5s ease;
   height: 140px;
-  width: 290px;
 }
 
 .cardName {
