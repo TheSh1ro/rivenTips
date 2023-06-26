@@ -333,7 +333,7 @@ export default {
           {{ match.danger }}
         </p>
       </div>
-      <p class="cardAbout" v-show="match.expanded">
+      <p class="cardExpand" v-show="match.expanded">
         {{ match.previousText }}
       </p>
     </div>
@@ -387,14 +387,14 @@ export default {
   font-size: 1.4rem;
 }
 
-.cardAbout {
-  font-size: 1rem;
+.cardExpand {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
+
   overflow: hidden;
+  color: white;
   background-color: rgba(0, 0, 0, 0.3);
   flex: 1;
   width: 100%;
