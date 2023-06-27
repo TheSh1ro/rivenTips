@@ -343,7 +343,7 @@ export default {
 /* Seletores ID */
 #matchContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   gap: 20px;
   text-shadow: 0px 0px 15px black, 0px 0px 15px black, 0px 0px 15px black, 0px 0px 15px black,
@@ -443,7 +443,7 @@ export default {
 }
 
 .matchCard.fullExpanded {
-  grid-column: span 4;
+  grid-column: span 5;
   height: 100vh;
   width: 100%;
   box-shadow: 3px 2px 5px 0px var(--colorTheme);
