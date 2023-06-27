@@ -8,7 +8,7 @@
       </div>
     </a>
     <div class="headerPublicity">
-      <img class="headerPublicityImage" src="../assets/icons/TikTok.png" alt="TikTok" />
+      <img class="headerPublicityImage" src="../assets/icons/tiktok.png" alt="TikTok" />
       <p class="headerPublicityText">see on TikTok</p>
     </div>
   </header>
