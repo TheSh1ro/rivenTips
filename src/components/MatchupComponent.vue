@@ -2,6 +2,7 @@
 export default {
   data() {
     return {
+      selectedChampion: null,
       matchs: [
         {
           image: 'http://ddragon.leagueoflegends.com/cdn/img/champion/centered/Aatrox_0.jpg',
@@ -266,10 +267,12 @@ export default {
       } else if (match.expanded) {
         match.fullExpanded = true
         match.expanded = false
+        this.selectedChampion = match.name
+        console.log(this.selectedChampion)
+
         this.matchs.forEach((match, i) => {
           if (i !== index) {
             match.hidden = true
-            console.log(match.hidden, i)
           }
         })
       } else {
@@ -325,7 +328,7 @@ export default {
       @click="expandCard(match, index)"
       @mouseleave="closeCard(match)"
     >
-      <div class="cardPreview">
+      <div class="cardPreview" v-show="!match.fullExpanded">
         <p class="cardName">
           {{ match.name }}
         </p>
@@ -336,11 +339,19 @@ export default {
       <p class="cardExpand" v-show="match.expanded">
         {{ match.previousText }}
       </p>
+      <div v-show="match.fullExpanded">
+        <p>Poderzinho</p>
+        <p>Poderzinho</p>
+        <p>Poderzinho</p>
+        <p>Poderzinho</p>
+      </div>
+      <div v-show="match.fullExpanded">
+        <p>Descrição</p>
+      </div>
     </div>
   </div>
 </template>
 <style scoped>
-/* Seletores ID */
 #matchContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -448,5 +459,15 @@ export default {
   width: 100%;
   box-shadow: 3px 2px 5px 0px var(--colorTheme);
   border: 1px solid var(--colorTheme);
+}
+
+.matchCard.fullExpanded {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.matchCard.fullExpanded * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

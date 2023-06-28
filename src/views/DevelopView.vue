@@ -1,25 +1,11 @@
-<template>
-  <div id="main">
-    <div class="championSpell" v-if="championData" v-for="spell in championData.spells">
-      <div class="spellTitle">
-        <img class="spellImage" :src="getImageUrl(spell.image.full)" alt="" />
-        <h1 class="spellName">{{ spell.name }}</h1>
-      </div>
-      <div class="spellBody">
-        <p class="spellCooldown">Cooldowns: {{ spell.cooldown }}</p>
-        <p class="spellDescription">Descrição: {{ spell.description }}</p>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import axios from 'axios'
 
 export default {
   data() {
     return {
-      championData: null
+      championData: null,
+      testVar: null
     }
   },
   mounted() {
@@ -28,9 +14,9 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Riven.json')
+        .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Garen.json')
         .then((response) => {
-          this.championData = response.data.data.Riven
+          this.championData = response.data.data.Garen
         })
         .catch((error) => {
           console.error(error)
@@ -43,6 +29,21 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div id="main" v-if="championData">
+    <div class="championSpell" v-for="spell in championData.spells" :key="spell.name">
+      <div class="spellTitle">
+        <img class="spellImage" :src="getImageUrl(spell.image.full)" alt="" />
+        <h1 class="spellName">{{ spell.name }}</h1>
+      </div>
+      <div class="spellBody">
+        <p class="spellCooldown">Cooldowns: {{ spell.cooldown }}</p>
+        <p class="spellDescription">Descrição: {{ spell.description }}</p>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style>
 #main {

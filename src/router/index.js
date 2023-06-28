@@ -12,7 +12,7 @@ const router = createRouter({
     },
     {
       path: '/desenvolvimento',
-      name: 't',
+      name: 'development',
       component: DevelopView
     }
   ]
