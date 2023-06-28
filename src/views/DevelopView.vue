@@ -4,8 +4,8 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      championData: null,
-      testVar: null
+      championsJSON: null,
+      championKeys: [] // Array para armazenar as chaves
     }
   },
   mounted() {
@@ -14,33 +14,23 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Garen.json')
+        .get('http://ddragon.leagueoflegends.com/cdn/13.12.1/data/en_US/champion.json')
         .then((response) => {
-          this.championData = response.data.data.Garen
+          this.championsJSON = response.data.data
+          this.championKeys = Object.keys(this.championsJSON.Ahri) // Obter as chaves do objeto
         })
         .catch((error) => {
           console.error(error)
         })
-    },
-    getImageUrl(imageName) {
-      const imageBaseUrl = 'https://ddragon.leagueoflegends.com/cdn/13.12.1/img/spell/'
-      return imageBaseUrl + imageName
     }
   }
 }
 </script>
 
 <template>
-  <div id="main" v-if="championData">
-    <div class="championSpell" v-for="spell in championData.spells" :key="spell.name">
-      <div class="spellTitle">
-        <img class="spellImage" :src="getImageUrl(spell.image.full)" alt="" />
-        <h1 class="spellName">{{ spell.name }}</h1>
-      </div>
-      <div class="spellBody">
-        <p class="spellCooldown">Cooldowns: {{ spell.cooldown }}</p>
-        <p class="spellDescription">Descrição: {{ spell.description }}</p>
-      </div>
+  <div v-if="championsJSON">
+    <div v-for="champion in championsJSON" :key="champion.name">
+      <p>{{ champion.name }} {{ champion.id }} {{ champion.role }}</p>
     </div>
   </div>
 </template>
