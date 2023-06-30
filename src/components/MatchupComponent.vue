@@ -399,10 +399,6 @@ export default {
       match.view = false
       match.expanded = 0
       match.hidden = false
-      match.aboutGeneral = 'Evite levar dano'
-      match.aboutLevel1 = 'Você mata'
-      match.aboutLevel3 = 'Texto'
-      match.aboutLevel6 = 'Você tem ultimate'
     })
   }
 }
