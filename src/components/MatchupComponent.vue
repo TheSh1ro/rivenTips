@@ -456,7 +456,7 @@ export default {
   display: grid;
   justify-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
 
   border-radius: 20px;
@@ -474,24 +474,21 @@ export default {
   height: min-content;
   padding: 10px;
   transition: 0.5s ease;
+  overflow: hidden;
 }
 .card.preview {
   width: 100%;
-  height: 100px;
+  height: 200px;
 }
 .card.resume {
-  grid-row: span 4;
-  height: 100%;
-  width: 100%;
-}
-.card.expanded {
-  grid-row: span 4;
+  grid-row: span 3;
   grid-column: span 2;
   height: 100%;
   width: 100%;
 }
-.card.expanded:nth-child(5n) {
-  grid-row: span 4;
+.card.expanded {
+  grid-row: span 3;
+  grid-column: span 2;
   height: 100%;
   width: 100%;
 }
