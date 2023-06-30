@@ -17,8 +17,7 @@ export default {
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Akshan_0.jpg',
           name: 'Akshan',
-          previousText:
-            'É uma matchup ligeiramente dificil, o mais seguro é evitar ao máximo levar dano até o level 6 e só então jogar agressivamente, já que Riven leva vantagem a partir desse level contra a maior parte dos rangeds. Ao dar all in, mantenha-se próximo para bloquear a corda do Akshan.',
+          previousText: '',
           fullText: null,
           danger: 'Difícil',
           id: 'Akshan'
@@ -328,7 +327,7 @@ export default {
           id: 'Yone'
         }
       ],
-      championDatax: null
+      championData: null
     }
   },
   methods: {
@@ -342,13 +341,13 @@ export default {
       }
     },
 
-    // fetchData() {
-    //   axios
-    //     .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Riven.json')
-    //     .then((response) => {
-    //       this.championData = response.data.data.Riven
-    //     })
-    // },
+    fetchData() {
+      axios
+        .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Riven.json')
+        .then((response) => {
+          this.championData = response.data.data.Riven
+        })
+    },
 
     getImageUrl(imageName) {
       const imageBaseUrl = 'https://ddragon.leagueoflegends.com/cdn/13.12.1/img/spell/'
@@ -401,6 +400,8 @@ export default {
       match.expanded = 0
       match.hidden = false
       match.spells = null
+      match.previousText =
+        'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text '
     })
   }
 }
@@ -476,7 +477,7 @@ export default {
 }
 .card.preview {
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
 .card.resume {
   grid-row: span 4;
@@ -491,7 +492,6 @@ export default {
 }
 .card.expanded:nth-child(5n) {
   grid-row: span 4;
-  grid-column: span 1;
   height: 100%;
   width: 100%;
 }
@@ -501,6 +501,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .previewName {
 }
