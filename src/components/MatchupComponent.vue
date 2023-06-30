@@ -305,11 +305,11 @@ export default {
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/MonkeyKing_0.jpg',
-          name: 'MonkeyKing',
+          name: 'Wukong',
           previousText: '',
           fullText: null,
           danger: 'Fácil',
-          id: 'Wukong'
+          id: 'MonkeyKing'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Yasuo_0.jpg',
@@ -332,6 +332,12 @@ export default {
     }
   },
   methods: {
+    testData() {
+      for (let match of this.matchs) {
+        console.log(match.id)
+      }
+    },
+
     // Importando dados do JSON
     fetchData() {
       axios
@@ -387,6 +393,7 @@ export default {
   mounted() {
     // Atualizando axios
     this.fetchData()
+    this.testData()
     // Adicionando campos vazios ao array
     this.matchs.forEach((match) => {
       match.view = false
