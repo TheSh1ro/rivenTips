@@ -327,12 +327,11 @@ export default {
           id: 'Yone'
         }
       ],
-      championData: null,
-      newChampionData: null
+      championData: null
     }
   },
   methods: {
-    testData() {
+    fetchData() {
       for (let match of this.matchs) {
         const championID = match.id
         axios
@@ -340,17 +339,9 @@ export default {
             `https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/${championID}.json`
           )
           .then((response) => {
-            this.newChampionData = response.data.data.Riven
+            match.spells = response.data.data[championID].spells
           })
       }
-    },
-
-    fetchData() {
-      axios
-        .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Riven.json')
-        .then((response) => {
-          this.championData = response.data.data.Riven
-        })
     },
 
     getImageUrl(imageName) {
@@ -397,7 +388,6 @@ export default {
   mounted() {
     // Atualizando axios
     this.fetchData()
-    this.testData()
     // Adicionando campos vazios ao array
     this.matchs.forEach((match) => {
       match.view = false
@@ -411,7 +401,7 @@ export default {
 }
 </script>
 <template>
-  <div id="container" v-if="championData">
+  <div id="container">
     <div
       v-for="(match, index) in matchs"
       v-show="!match.hidden"
@@ -442,7 +432,7 @@ export default {
         </p>
       </div>
       <div class="cardExpanded" v-show="match.expanded == 2">
-        <div class="expandedSpell" v-for="spell in championData.spells" :key="spell.name">
+        <div class="expandedSpell" v-for="spell in match.spells" :key="spell.name">
           <div class="spellHeader">
             <img class="headerImage" :src="getImageUrl(spell.image.full)" alt="" />
             <h1 class="headerName">{{ spell.name }}</h1>
@@ -460,7 +450,7 @@ export default {
   display: grid;
   justify-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 15px;
 
   border-radius: 20px;
@@ -486,13 +476,13 @@ export default {
 }
 .card.resume {
   grid-row: span 3;
-  grid-column: span 2;
+  grid-column: span 1;
   height: 100%;
   width: 100%;
 }
 .card.expanded {
   grid-row: span 3;
-  grid-column: span 2;
+  grid-column: span 1;
   height: 100%;
   width: 100%;
 }
@@ -547,10 +537,10 @@ export default {
   gap: 5px;
 }
 .headerImage {
-  height: 1.4rem;
+  height: 1.5rem;
 }
 .headerName {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 .spellCooldown {
