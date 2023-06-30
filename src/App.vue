@@ -31,9 +31,8 @@ import PageNavigation from './components/PageNavigation.vue'
 
 body {
   font-weight: normal;
-  font-size: 16px;
-  margin-block: 5vh;
   background-color: black;
+  font-size: 16px;
 }
 
 #app {
@@ -41,7 +40,5 @@ body {
   flex-direction: column;
   min-height: 100vh;
   max-width: 100vw;
-  padding-inline: 4vw;
-  row-gap: 5vh;
 }
 </style>

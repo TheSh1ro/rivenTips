@@ -331,30 +331,27 @@ export default {
 
     // Alterando status de normal / expandido / modo tela cheia dos cards, na variável match.expanded ou match.fullExpanded
     expandCard(match, index) {
-      if (!match.expanded && !match.fullExpanded) {
-        match.expanded = true
-      } else if (match.expanded) {
-        match.fullExpanded = true
-        match.expanded = false
+      if (match.expanded === 0) {
+        match.expanded = 1
+      } else if (match.expanded === 1) {
+        match.expanded = 2
         this.selectedChampionJson = match.jsonLink
-        console.log(this.selectedChampionJson)
-
         this.matchs.forEach((match, i) => {
           if (i !== index) {
             match.hidden = true
           }
         })
-      } else {
-        match.fullExpanded = false
-        match.expanded = this.selectedChampionJson = null
+      } else if (match.expanded === 2) {
+        match.expanded = 0
+        this.selectedChampionJson = null
         this.matchs.forEach((match) => {
           match.hidden = false
         })
       }
     },
     closeCard(match) {
-      if (match.expanded) {
-        match.expanded = false
+      if (match.expanded === 1) {
+        match.expanded = 0
       }
     },
     // Cor do texto conforme a dificuldade da matchup
@@ -374,7 +371,7 @@ export default {
     // Adicionando campos vazios ao array
     this.matchs.forEach((match) => {
       match.view = false
-      match.expanded = false
+      match.expanded = 0
       match.hidden = false
       match.aboutGeneral = 'Evite levar dano'
       match.aboutLevel1 = 'Você mata'
@@ -385,14 +382,15 @@ export default {
 }
 </script>
 <template>
-  <div id="matchContainer" v-if="championData">
+  <div id="container" v-if="championData">
     <div
       v-for="(match, index) in matchs"
       v-show="!match.hidden"
-      class="matchCard"
+      class="card"
       :class="{
-        expanded: match.expanded,
-        fullExpanded: match.fullExpanded,
+        preview: match.expanded == 0,
+        resume: match.expanded == 1,
+        expanded: match.expanded == 2,
         dangerEasy: match.danger === 'Fácil',
         dangerMedium: match.danger === 'Médio',
         dangerHard: match.danger === 'Difícil'
@@ -402,183 +400,137 @@ export default {
       @click="expandCard(match, index)"
       @mouseleave="closeCard(match)"
     >
-      <div class="cardPreview" v-show="!match.fullExpanded">
-        <p class="cardName">
+      <div class="cardPreview" v-show="match.expanded == 0">
+        <p class="previewName">
           {{ match.name }}
         </p>
-        <p class="cardDanger" :style="{ color: getDangerColor(match) }">
+        <p class="previewDanger" :style="{ color: getDangerColor(match) }">
           {{ match.danger }}
         </p>
       </div>
-      <p class="cardExpand" v-show="match.expanded">
-        {{ match.previousText }}
-      </p>
-      <div class="cardSpells" v-show="match.fullExpanded">
-        <div class="spellBody" v-for="spell in championData.spells" :key="spell.name">
-          <div class="spellTitle">
-            <img class="spellImage" :src="getImageUrl(spell.image.full)" alt="" />
-            <h1 class="spellName">{{ spell.name }}</h1>
-          </div>
-          <p class="spellCooldown">{{ spell.cooldownBurn }}</p>
-        </div>
-      </div>
-      <div class="cardTips" v-show="match.fullExpanded">
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae elit eleifend,
-          venenatis felis eu, pulvinar nunc. In hac habitasse platea dictumst. Proin ac nunc id nisi
-          interdum pulvinar. Nullam at justo risus. Suspendisse sagittis auctor ligula, at aliquet
-          urna efficitur et. Duis sodales tempus enim, non dapibus nisl tincidunt vel. Integer
-          malesuada quam eu odio faucibus, nec lacinia dolor venenatis. Sed a elit at ligula
-          vehicula facilisis. Phasellus at libero nec mi fermentum malesuada. Nullam eget odio
-          ante."
+      <div class="cardResume" v-show="match.expanded == 1">
+        <p class="resumeText">
+          {{ match.previousText }}
         </p>
+      </div>
+      <div class="cardExpanded" v-show="match.expanded == 2">
+        <div class="expandedSpell" v-for="spell in championData.spells" :key="spell.name">
+          <div class="spellHeader">
+            <img class="headerImage" :src="getImageUrl(spell.image.full)" alt="" />
+            <h1 class="headerName">{{ spell.name }}</h1>
+          </div>
+          <div>
+            <p class="spellCooldown">Cooldown: {{ spell.cooldownBurn }}s</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
-#matchContainer {
+#container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto;
-  gap: 20px;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+
+  border-radius: 20px;
   text-shadow: 0px 0px 15px black, 0px 0px 15px black, 0px 0px 15px black, 0px 0px 15px black,
     0px 0px 15px black, 0px 0px 15px black;
-  border-radius: 20px;
 }
 
-.matchCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.card {
   background-size: cover;
   background-position: center;
-  padding: 10px;
+  border: 2px solid var(--colorTheme);
   border-radius: 20px;
   color: white;
-  overflow: hidden;
-  width: auto;
-  box-shadow: 3px 2px 5px 0px var(--colorTheme);
-  border: 1px solid var(--colorTheme);
   cursor: pointer;
-  position: relative;
+  height: min-content;
+  padding: 10px;
   transition: 0.5s ease;
-  height: 140px;
+}
+.card.preview {
+  width: 100%;
+  height: 100%;
+}
+.card.resume {
+  grid-row: span 4;
+  height: 100%;
+  width: 100%;
+}
+.card.expanded {
+  width: 100%;
 }
 
 .cardPreview {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.previewName {
+}
+.previewDanger {
 }
 
-.cardName {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.cardDanger {
-  font-size: 1.4rem;
-}
-
-.matchCard.expanded {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-.cardExpand {
+.cardResume {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-
-  overflow: hidden;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  height: 100%;
+  text-align: center;
+}
+.resumeText {
 }
 
-.dangerEasy:hover {
-  box-shadow: 3px 2px 5px 0px var(--dangerEasy);
-  border: 1px solid var(--dangerEasy);
-}
-
-.dangerMedium:hover {
-  box-shadow: 3px 2px 5px 0px var(--dangerMedium);
-  border: 1px solid var(--dangerMedium);
-}
-
-.dangerHard:hover {
-  box-shadow: 3px 2px 5px 0px var(--dangerHard);
-  border: 1px solid var(--dangerHard);
-}
-
-.dangerEasy.expanded,
-.dangerEasy.fullExpanded {
-  box-shadow: 3px 2px 5px 0px var(--dangerEasy);
-  border: 1px solid var(--dangerEasy);
-}
-
-.dangerMedium.expanded,
-.dangerMedium.fullExpanded {
-  box-shadow: 3px 2px 5px 0px var(--dangerMedium);
-  border: 1px solid var(--dangerMedium);
-}
-
-.dangerHard.expanded,
-.dangerHard.fullExpanded {
-  box-shadow: 3px 2px 5px 0px var(--dangerHard);
-  border: 1px solid var(--dangerHard);
-}
-
-.matchCard.expanded {
-  grid-row: span 3;
-  height: calc(140px * 3 + 20px * 2);
-}
-
-.matchCard.fullExpanded {
-  grid-column: span 5;
-  height: 100vh;
-  width: 100%;
-  box-shadow: 3px 2px 5px 0px var(--colorTheme);
-  border: 1px solid var(--colorTheme);
-}
-
-.matchCard.fullExpanded {
+.cardExpanded {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 50%));
+  grid-auto-columns: minmax(210px, 1vh);
+  justify-content: space-evenly;
   justify-items: center;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  height: 50vh;
 }
-.cardTips {
+.expandedSpell {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.cardTips * {
-  font-size: 1.6rem;
-  margin-inline: 10%;
-}
-.cardSpells {
+.spellHeader {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1.5rem;
-  gap: 4rem;
+  align-items: center;
+  gap: 5px;
 }
-.spellBody {
-  display: flex;
-  flex-direction: column;
+.headerImage {
+  height: 1.4rem;
 }
-.spellTitle {
-  display: flex;
-  gap: 10px;
-}
-.spellName {
-  color: var(--colorTheme);
+.headerName {
+  font-size: 1.4rem;
+  text-align: center;
 }
 .spellCooldown {
-  color: white;
+  text-align: center;
+}
+.spellLevel {
+}
+
+.card.dangerEasy:hover {
+  border: 2px solid var(--dangerEasy);
+}
+.card.dangerMedium:hover {
+  border: 2px solid var(--dangerMedium);
+}
+.card.dangerHard:hover {
+  border: 2px solid var(--dangerHard);
 }
 </style>

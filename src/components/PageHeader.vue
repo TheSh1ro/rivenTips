@@ -15,25 +15,25 @@
 </template>
 <style scoped>
 #header {
-  height: 500px;
-
+  height: 60vh;
   display: grid;
   grid-template-rows: 1fr 10%;
 
-  background-image: url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_55.jpg);
+  background-image: url(https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Riven_55.jpg);
   background-size: cover;
+  background-position: center;
 
   border-radius: 20px;
   border: 1px solid var(--colorHeader);
-  text-shadow: 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader),
-    0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader);
+  text-shadow: 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader),
+    0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader), 0px 0px 5px var(--colorHeader),
+    0px 0px 5px var(--colorHeader);
   color: white;
 }
 .welcome {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
 }
 .headerPublicity {
   display: flex;

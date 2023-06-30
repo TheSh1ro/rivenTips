@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <navigation id="navigation">
+  <div id="navigation">
     <a class="navigationButton" href="https://discord.gg/MpWnCWw54s" target="_blank">
       <img class="navigationButtonImg" src="../assets/icons/discord.png" alt="" />
       <p>Discord</p>
@@ -39,18 +39,16 @@ export default {
       />
       <p>TestRoute</p>
     </RouterLink>
-  </navigation>
+  </div>
 </template>
 
 <style scoped>
 #navigation {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-inline: 22vw;
-  color: white;
-  gap: 2vw;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px;
+  min-height: 10vh;
 }
 
 .navigationButton {
