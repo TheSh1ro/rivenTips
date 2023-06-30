@@ -8,305 +8,324 @@ export default {
       matchs: [
         {
           name: 'Aatrox',
-          previousText:
-            'É uma matchup relativamente simples, onde o seu objetivo principal é baitar o E+Q dele fazendo com que se exponha. Para isso, use o Q na direção do Aatrox quando for desviar do Q1 ou Q2 dele',
+          previousText: '',
           fullText: null,
           image: 'http://ddragon.leagueoflegends.com/cdn/img/champion/centered/Aatrox_0.jpg',
-          jsonLink:
-            'https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Aatrox.json',
-          danger: 'Médio'
+          danger: 'Médio',
+          id: 'Aatrox'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Akshan_0.jpg',
-          jsonLink:
-            'https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Akshan.json',
           name: 'Akshan',
           previousText:
             'É uma matchup ligeiramente dificil, o mais seguro é evitar ao máximo levar dano até o level 6 e só então jogar agressivamente, já que Riven leva vantagem a partir desse level contra a maior parte dos rangeds. Ao dar all in, mantenha-se próximo para bloquear a corda do Akshan.',
           fullText: null,
-          danger: 'Difícil'
+          danger: 'Difícil',
+          id: 'Akshan'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Camille_0.jpg',
-          jsonLink:
-            'https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Camille.json',
           name: 'Camille',
-          previousText:
-            'Varia de acordo com o patch, mas a riven sempre vai ter um early igual ou superior ao da Camille. Tente baitar o escudo dela se aproximando e quando for levar o AA use seu E. Você leva vantagem tanto em trocas longas quanto curtas nessa fase do jogo, então não tenha medo',
+          previousText: '',
           fullText: null,
-          danger: 'Fácil'
+          danger: 'Fácil',
+          id: 'Camille'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Chogath_0.jpg',
-          jsonLink:
-            'https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Chogath.json',
           name: 'Cho Gath',
-          previousText:
-            'Matchup um tanto desagradável, tente abusar ao máximo dos primeiros leveis, causando o máximo de dano e recebendo o minimo pois essa vida será importante tanto para evitar ganks quanto pressiona-lo ao longo do tempo.',
+          previousText: '',
           fullText: null,
-          danger: 'Médio'
+          danger: 'Médio',
+          id: 'Chogath'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Darius_0.jpg',
           name: 'Darius',
-          previousText:
-            'Nessa matchup é muito importante usar seus stuns de forma consciente, cancelando os auto ataques do Darius para evitar sua passiva. Trocas curtas são importantes para deixa-lo com 70% de vida, e então dar um all in, mas tenha cuidado com o flash adversário',
+          previousText: '',
           fullText: null,
-          danger: 'Médio'
+          danger: 'Médio',
+          id: 'Darius'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/DrMundo_0.jpg',
           name: 'Dr. Mundo',
           previousText: 'Prévia da Matchup',
           danger: 'Fácil',
-          fullText: null
+          fullText: null,
+          id: 'DrMundo'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Fiora_0.jpg',
           name: 'Fiora',
           previousText: 'Prévia da Matchup',
           danger: 'Médio',
-          fullText: null
+          fullText: null,
+          id: 'Fiora'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Gangplank_0.jpg',
           name: 'Gang Plank',
           previousText: 'Prévia da Matchup',
           danger: 'Fácil',
-          fullText: null
+          fullText: null,
+          id: 'Gangplank'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Garen_0.jpg',
           name: 'Garen',
           previousText: 'Prévia da Matchup',
           danger: 'Médio',
-          fullText: null
+          fullText: null,
+          id: 'Garen'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Gnar_0.jpg',
           name: 'Gnar',
           previousText: 'Prévia da Matchup',
-          danger: 'Fácil',
-          fullText: null
+          danger: 'Médio',
+          fullText: null,
+          id: 'Gnar'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Irelia_0.jpg',
-          name: 'Irélia',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          name: 'Irelia',
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'Irelia'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Jax_0.jpg',
           name: 'Jax',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Difícil',
-          fullText: null
+          id: 'Jax'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Jayce_0.jpg',
           name: 'Jayce',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Difícil',
-          fullText: null
+          id: 'Jayce'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Kayle_0.jpg',
           name: 'Kayle',
-          previousText: 'Prévia da Matchup',
-          danger: 'Fácil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Kayle'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Kennen_0.jpg',
           name: 'Kennen',
-          previousText: 'Prévia da Matchup',
-          danger: 'Difícil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Kennen'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Kled_0.jpg',
           name: 'Kled',
-          previousText: 'Prévia da Matchup',
-          danger: 'Difícil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Kled'
         },
         {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/KSante_0.jpg',
           name: 'KSante',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          image: 'http://ddragon.leagueoflegends.com/cdn/img/champion/centered/KSante_0.jpg',
+          danger: 'Fácil',
+          id: 'KSante'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Malphite_0.jpg',
           name: 'Malphite',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'Malphite'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Maokai_0.jpg',
           name: 'Maokai',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Fácil',
-          fullText: null
+          id: 'Maokai'
+        },
+        {
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Mordekaiser_0.jpg',
+          name: 'Mordekaiser',
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'Mordekaiser'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Nasus_0.jpg',
           name: 'Nasus',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Fácil',
-          fullText: null
+          id: 'Nasus'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Ornn_0.jpg',
           name: 'Ornn',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Médio',
-          fullText: null
+          id: 'Ornn'
         },
         {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Yorick_0.jpg',
-          name: 'Yorick',
-          previousText: 'Prévia da Matchup',
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Pantheon_0.jpg',
+          name: 'Pantheon',
+          previousText: '',
+          fullText: null,
           danger: 'Médio',
-          fullText: null
-        },
-        {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Poppy_0.jpg',
-          name: 'Poppy',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
-        },
-        {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Quinn_0.jpg',
-          name: 'Quinn',
-          previousText: 'Prévia da Matchup',
-          danger: 'Difícil',
-          fullText: null
+          id: 'Pantheon'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Renekton_0.jpg',
           name: 'Renekton',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Difícil',
+          id: 'Renekton'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Rengar_0.jpg',
           name: 'Rengar',
-          previousText: 'Prévia da Matchup',
-          danger: 'Fácil',
-          fullText: null
-        },
-        {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Riven_0.jpg',
-          name: 'Riven',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Difícil',
-          fullText: null
+          id: 'Rengar'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Sett_0.jpg',
           name: 'Sett',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'Sett'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Shen_0.jpg',
           name: 'Shen',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Médio',
-          fullText: null
+          id: 'Shen'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Singed_0.jpg',
           name: 'Singed',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Fácil',
-          fullText: null
+          id: 'Singed'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Sion_0.jpg',
           name: 'Sion',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Fácil',
-          fullText: null
+          id: 'Sion'
+        },
+        {
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Swain_0.jpg',
+          name: 'Swain',
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Swain'
+        },
+        {
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/TahmKench_0.jpg',
+          name: 'Tahm Kench',
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'TahmKench'
+        },
+        {
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Talon_0.jpg',
+          name: 'Talon',
+          previousText: '',
+          fullText: null,
+          danger: 'Difícil',
+          id: 'Talon'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Teemo_0.jpg',
           name: 'Teemo',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Difícil',
-          fullText: null
-        },
-        {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Trundle_0.jpg',
-          name: 'Trundle',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
-        },
-        {
-          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Tryndamere_0.jpg',
-          name: 'Tryndamere',
-          previousText: 'Prévia da Matchup',
-          danger: 'Fácil',
-          fullText: null
+          id: 'Teemo'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Urgot_0.jpg',
           name: 'Urgot',
-          previousText: 'Prévia da Matchup',
-          danger: 'Difícil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Urgot'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Vayne_0.jpg',
           name: 'Vayne',
-          previousText: 'Prévia da Matchup',
+          previousText: '',
+          fullText: null,
           danger: 'Difícil',
-          fullText: null
+          id: 'Vayne'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Vladimir_0.jpg',
           name: 'Vladimir',
-          previousText: 'Prévia da Matchup',
-          danger: 'Fácil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Vladimir'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Volibear_0.jpg',
           name: 'Volibear',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'Volibear'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/MonkeyKing_0.jpg',
-          name: 'Wukong',
-          previousText: 'Prévia da Matchup',
-          danger: 'Médio',
-          fullText: null
+          name: 'MonkeyKing',
+          previousText: '',
+          fullText: null,
+          danger: 'Fácil',
+          id: 'Wukong'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Yasuo_0.jpg',
           name: 'Yasuo',
-          previousText:
-            'É necessário jogar  com cautela até o level 3, já que seu DPS inicial é inferior ao dele, devido ao ritmo fatal e Q com baixo cooldown.',
-          danger: 'Fácil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Yasuo'
         },
         {
           image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/centered/Yone_0.jpg',
           name: 'Yone',
-          previousText:
-            'É necessário jogar  com cautela até o level 3, já que seu DPS inicial é inferior ao dele, devido ao ritmo fatal e Q com baixo cooldown..',
-          danger: 'Fácil',
-          fullText: null
+          previousText: '',
+          fullText: null,
+          danger: 'Médio',
+          id: 'Yone'
         }
       ],
       championData: null
@@ -504,10 +523,11 @@ export default {
   grid-auto-columns: minmax(210px, 1vh);
   justify-content: space-evenly;
   justify-items: center;
+  align-content: space-evenly;
 
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  height: 50vh;
+  height: 100%;
 }
 .expandedSpell {
   display: flex;
