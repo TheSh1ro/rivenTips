@@ -336,11 +336,11 @@ export default {
       } else if (match.expanded === 1) {
         match.expanded = 2
         this.selectedChampionJson = match.jsonLink
-        this.matchs.forEach((match, i) => {
-          if (i !== index) {
-            match.hidden = true
-          }
-        })
+        // this.matchs.forEach((match, i) => {
+        //   if (i !== index) {
+        //     match.hidden = true
+        //   }
+        // })
       } else if (match.expanded === 2) {
         match.expanded = 0
         this.selectedChampionJson = null
@@ -398,7 +398,6 @@ export default {
       :key="match.name"
       :style="{ backgroundImage: 'url(' + match.image + ')' }"
       @click="expandCard(match, index)"
-      @mouseleave="closeCard(match)"
     >
       <div class="cardPreview" v-show="match.expanded == 0">
         <p class="previewName">
@@ -461,6 +460,15 @@ export default {
   width: 100%;
 }
 .card.expanded {
+  grid-row: span 4;
+  grid-column: span 2;
+  height: 100%;
+  width: 100%;
+}
+.card.expanded:nth-child(5n) {
+  grid-row: span 4;
+  grid-column: span 1;
+  height: 100%;
   width: 100%;
 }
 
@@ -483,7 +491,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   height: 100%;
   text-align: center;
 }

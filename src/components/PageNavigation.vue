@@ -7,7 +7,7 @@ export default {
   },
   methods: {
     toggleLinkTo() {
-      this.linkTo = this.linkTo === 'desenvolvimento' ? 'início' : 'desenvolvimento'
+      this.linkTo = this.linkTo === 'desenvolvimento' ? '/' : 'desenvolvimento'
     }
   }
 }
@@ -37,7 +37,7 @@ export default {
         alt=""
         src="https://www.adobe.com/br/express/create/media_114db2401080d263d7338e6fab6589ca67f85274c.jpeg?width=400&format=jpeg&optimize=medium"
       />
-      <p>TestRoute</p>
+      <p>Ir para Início</p>
     </RouterLink>
   </div>
 </template>
