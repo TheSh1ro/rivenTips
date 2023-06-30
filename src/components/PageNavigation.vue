@@ -49,6 +49,7 @@ export default {
   gap: 15px;
   margin: 15px;
   min-height: 10vh;
+  color: white;
 }
 
 .navigationButton {

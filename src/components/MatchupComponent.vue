@@ -328,27 +328,28 @@ export default {
           id: 'Yone'
         }
       ],
-      championData: null
+      championDatax: null
     }
   },
   methods: {
-    testData() {
+    async testData() {
       for (let match of this.matchs) {
-        console.log(match.id)
+        const response = await axios.get(
+          `https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/${match.id}.json`
+        )
+        const championData = response.data.data[match.id]
+        console.log(championData.spells.name)
       }
     },
 
-    // Importando dados do JSON
-    fetchData() {
-      axios
-        .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Riven.json')
-        .then((response) => {
-          this.championData = response.data.data.Riven
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-    },
+    // fetchData() {
+    //   axios
+    //     .get('https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/Riven.json')
+    //     .then((response) => {
+    //       this.championData = response.data.data.Riven
+    //     })
+    // },
+
     getImageUrl(imageName) {
       const imageBaseUrl = 'https://ddragon.leagueoflegends.com/cdn/13.12.1/img/spell/'
       return imageBaseUrl + imageName
@@ -399,6 +400,7 @@ export default {
       match.view = false
       match.expanded = 0
       match.hidden = false
+      match.spells = null
     })
   }
 }
