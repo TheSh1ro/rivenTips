@@ -3,7 +3,7 @@
   <header id="header">
     <a class="welcome" href="https://www.tiktok.com/@elohigher?lang=pt-BR" target="_blank">
       <div class="welcomeArea">
-        <p class="welcomeAreaText">all about riven</p>
+        <p class="welcomeAreaText"></p>
         <p class="welcomeAreaText">by @bielzin</p>
       </div>
     </a>

@@ -356,11 +356,11 @@ export default {
       } else if (match.expanded === 1) {
         match.expanded = 2
         this.selectedChampionJson = match.jsonLink
-        // this.matchs.forEach((match, i) => {
-        //   if (i !== index) {
-        //     match.hidden = true
-        //   }
-        // })
+        this.matchs.forEach((match, i) => {
+          if (i !== index) {
+            match.hidden = true
+          }
+        })
       } else if (match.expanded === 2) {
         match.expanded = 0
         this.selectedChampionJson = null
@@ -394,8 +394,7 @@ export default {
       match.expanded = 0
       match.hidden = false
       match.spells = null
-      match.previousText =
-        'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text '
+      match.previousText = 'GBREU DA MADRUGADA'
     })
   }
 }
@@ -483,8 +482,9 @@ export default {
 .card.expanded {
   grid-row: span 3;
   grid-column: span 1;
-  height: 100%;
-  width: 100%;
+  height: 80vh;
+  width: 50%;
+  justify-self: left;
 }
 
 .cardPreview {

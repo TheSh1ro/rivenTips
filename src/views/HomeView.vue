@@ -14,11 +14,10 @@ export default {
 
 <template>
   <main id="home">
+    <h1 class="containerTitle">Protótipo da página</h1>
     <PageHeader />
     <h1 class="containerTitle">↓ Riven Matchups ↓</h1>
     <MatchupComponent />
-    <h1 class="containerTitle">Como jogar</h1>
-    <h1 class="containerTitle">Protótipo da página</h1>
   </main>
 </template>
 
