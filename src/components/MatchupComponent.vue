@@ -327,17 +327,21 @@ export default {
           id: 'Yone'
         }
       ],
-      championData: null
+      championData: null,
+      newChampionData: null
     }
   },
   methods: {
-    async testData() {
+    testData() {
       for (let match of this.matchs) {
-        const response = await axios.get(
-          `https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/${match.id}.json`
-        )
-        const championData = response.data.data[match.id]
-        console.log(championData.spells.name)
+        const championID = match.id
+        axios
+          .get(
+            `https://ddragon.leagueoflegends.com/cdn/13.12.1/data/pt_BR/champion/${championID}.json`
+          )
+          .then((response) => {
+            this.newChampionData = response.data.data.Riven
+          })
       }
     },
 
